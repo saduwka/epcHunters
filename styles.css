@@ -1,0 +1,493 @@
+.slider-arrow {
+  display: none;
+}
+
+@font-face {
+  font-family: "Actay";
+  src: url("./assets/fonts/Actay-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "Actay Wide";
+  src: url("./assets/fonts/ActayWide-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "Actay Thin";
+  src: url("./assets/fonts/ActayCondensed-Thin.otf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter.ttc") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Actay", sans-serif;
+  background: url("./assets/images/background.png") no-repeat center/cover;
+  margin: 0;
+}
+
+.site-header {
+  position: relative;
+  background: transparent;
+  color: #fff;
+  padding: 40px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  width: 30px;
+  height: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+  position: relative;
+}
+
+.burger-menu.open .burger-line:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+}
+
+.burger-menu.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open .burger-line:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+}
+
+.burger-menu.open .burger-line {
+  background-color: #000;
+}
+
+.site-title {
+  font-family: "Actay Wide", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: pre-line;
+  vertical-align: bottom;
+  line-height: 90%;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-left: 3rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.nav-item {
+  font-family: "Actay Thin", sans-serif;
+  cursor: pointer;
+  transition: border-bottom 0.3s ease;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 46%;
+  letter-spacing: 0;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.nav-btn {
+  font-family: "Actay", sans-serif;
+  text-transform: uppercase;
+  width: 173px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 46%;
+  letter-spacing: 0;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.intro-section {
+  width: 614px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-title {
+  font-family: "Actay Wide", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.roadmap {
+  position: relative;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+.steps {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+
+.step {
+  position: absolute;
+  z-index: 1;
+  width: 283px;
+  height: 77px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 3px solid #fff;
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  gap: 10px;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.35);
+}
+
+.step .circle {
+  margin-left: 14px;
+  flex-shrink: 0;
+  background-color: #5e7600;
+  color: #fff;
+  width: 51px;
+  height: 51px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.step p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0;
+  color: #fff;
+  text-align: left;
+}
+
+.step1 {
+  top: 0%;
+  left: 5%;
+}
+.step2 {
+  top: 50%;
+  left: 10%;
+}
+.step3 {
+  top: 70%;
+  left: 40%;
+}
+.step4 {
+  top: 20%;
+  left: 35%;
+}
+.step5 {
+  top: 6.36%;
+  right: 5%;
+}
+.step6 {
+  top: 40%;
+  right: 15%;
+}
+
+.step-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.info-section {
+  display: flex;
+  justify-content: center;
+}
+
+.info-btn {
+  width: 215px;
+  height: 50.29px;
+  border-radius: 166px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  font-size: 24.45px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 100%;
+  transition: .3s;
+}
+
+.info-btn:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 90px 60px;
+  max-width: 993px;
+  max-height: 490px;
+  overflow-y: auto;
+  border-radius: 35px;
+  position: relative;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  cursor: pointer;
+  width: 26.41px;
+  height: 26.41px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    color: #000;
+    width: 100%;
+    height: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-nav.open {
+    transform: translateY(0);
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    position: fixed;
+    top: 0;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 30px 16px;
+  }
+
+  .site-title {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .site-nav {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    justify-content: flex-start;
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+
+  .intro-section {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .intro-title {
+    font-size: 35px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .steps-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .steps {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .step {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    width: 290px;
+    height: 217px;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .slider-arrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    position: absolute;
+    bottom: 35%;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    border: none;
+    padding: 0 10px;
+    font-size: 18px;
+    font-family: "Actay Thin", sans-serif;
+  }
+
+  .slider-arrow.left {
+    left: calc(20% - 60px);
+  }
+
+  .slider-arrow.right {
+    right: calc(20% - 60px);
+  }
+
+  .step-lines {
+    display: none;
+  }
+
+  .info-btn {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .modal-content {
+    padding: 40px 20px;
+    max-width: 90%;
+    max-height: 80vh;
+    font-size: 14px;
+  }
+
+  .modal-close {
+    top: 16px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-btn-icn {
+    filter: brightness(0);
+  }
+
+  .site-nav .site-title {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 1rem;
+    font-family: "Actay Wide", sans-serif;
+    text-align: left;
+    padding-left: 1rem;
+  }
+}
